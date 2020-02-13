@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme"
+    tools:context=".MainActivity">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/xy"
+                    android:layout_width="350dp"
+                    android:layout_height= "250dp"
+                    android:layout_margin="0dp"
+                    android:layout_gravity="center"
+                    android:padding="0dp"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/z"></ImageView>
+
+                <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+                    android:id="@+id/zz"
+                    android:layout_width="380dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:layout_weight="0.5"
+                    android:padding="0dp"
+                    app:src="@drawable/xx"></com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView>
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
