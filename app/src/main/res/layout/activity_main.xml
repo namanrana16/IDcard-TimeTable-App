@@ -1,46 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:theme="@style/AppTheme"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools" >
 
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
 
-            android:gravity="center"
-            android:orientation="vertical"
+                <fragment
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idFragment"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/mynav"
+                    app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
 
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-
-                <ImageView
-                    android:id="@+id/xy"
-                    android:layout_width="350dp"
-                    android:layout_height="250dp"
-                    android:layout_gravity="center"
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNavigationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     android:layout_margin="0dp"
-                    android:layout_weight="0.5"
-                    android:padding="0dp"
-                    android:src="@drawable/z"></ImageView>
+                    app:menu="@menu/bottom_menu"
+                    />
 
-                <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
-                    android:id="@+id/zz"
-                    android:layout_width="380dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="0dp"
-                    android:layout_weight="0.5"
-                    android:padding="0dp"
-                    app:src="@drawable/xx"></com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView>
-
-        </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
